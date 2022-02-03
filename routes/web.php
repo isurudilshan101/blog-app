@@ -26,3 +26,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Post 
 
 Route::post('/post/store',[PostController::class,'store'])->name('post.store');
+Route::get('/post/{postId}/show',[PostController::class,'show'])->name('post.show');
