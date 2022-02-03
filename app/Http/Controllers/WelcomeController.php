@@ -9,7 +9,7 @@ class WelcomeController extends Controller
 {
     public function index(){
 
-        $post=Post::all();
-        return view('welcome',compact('post'));
+        $posts=Post::all();
+        return view('welcome',compact('posts'));
     }
 }
