@@ -15,18 +15,19 @@
                         @endif
 
                         {{-- {{ __('You are logged in!') }} --}}
-                        <form method="post" action="{{}}">
+                        <form method="post" action="{{ route('post.store') }}">
+                            @csrf
                             <div class="form-group">
                                 <label>Post Title</label>
                                 <input type="text" name="title" class="form-control mt-2 mb-2" id="exampleInputEmail1"
-                                    placeholder="Enter Post Title">
+                                    placeholder="Enter Post Title"required>
                             </div>
 
                             <div class="form-group">
                                 <label>Post Discription</label>
 
                                 <textarea name="description" class="form-control  placeholder="Enter Post Discription"
-                                    rows="10"></textarea>
+                                    rows="10" required></textarea>
 
                             </div>
 
