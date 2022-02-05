@@ -37,7 +37,7 @@
                                 <a class="nav-link"  href="{{ route('home') }}">New Post</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"  href="{{ route('post.all') }}">Add Post</a>
+                                <a class="nav-link"  href="{{ route('post.all') }}">All Post</a>
                             </li>
                     </ul>
 
