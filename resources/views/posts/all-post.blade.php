@@ -21,7 +21,7 @@
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->description }}</td>
                                 <td>
-                                    <a href="" class="btn btn-sm btn-primary">Edit</a>
+                                    <a href="{{ route('post.edit',$post->id) }}" class="btn btn-sm btn-primary">Edit</a>
                                     <a href="" class="btn btn-sm btn-danger">Delete</a>
                                 </td>
                             </tr>

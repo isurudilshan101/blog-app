@@ -31,7 +31,5 @@ class HomeController extends Controller
     public function allPost(){
         $posts=Post::where('user_id',Auth::user()->id)->get();
             return view('posts.all-post',compact('posts'));
-    }
-
-    
+    }   
 }

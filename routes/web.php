@@ -29,3 +29,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('/post/store',[PostController::class,'store'])->name('post.store');
 Route::get('/post/{postId}/show',[PostController::class,'show'])->name('post.show');
 Route::get('/posts/all',[HomeController::class,'allPost'])->name('post.all');
+Route::get('/post/{postId}/edit',[PostController::class,'edit'])->name('post.edit');
+Route::post('/post/{postId}/update',[PostController::class,'update'])->name('post.update');
+
+

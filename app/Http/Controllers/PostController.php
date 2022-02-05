@@ -23,4 +23,16 @@ class PostController extends Controller
 
         return view('posts.show',compact('post'));
    }
+
+   public function edit($postId){
+       $post=Post::findOrFail($postId);
+
+       return view('posts.edit',compact('post'));
+   }
+
+   public function update($postId,Request $request){
+        Post::findOrFail($postId)->update($request->all());
+        
+        return back();
+   }
 }
