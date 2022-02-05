@@ -35,4 +35,10 @@ class PostController extends Controller
 
         return redirect()->route('post.all');
    }
+
+   public function delete($postId){
+       Post::findOrFail($postId)->delete();
+
+       return redirect()->route('post.all');
+   }
 }
