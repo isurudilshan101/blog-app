@@ -4,17 +4,29 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class PostController extends Controller
 {
    public function store(Request $request){
+       $validator = FacadesValidator::make($request->all(),[
+                'title' => 'required',
+                'description' => 'required',
+       ]);
+
+       if($validator->Fails()){
+           return back()->with('status','Something Wrong !');
+       }else{
         Post::create([
             'user_id'=>auth()->user()->id,
             'title' => $request->title,
             'description' => $request->description,
         ]);
-        return back();
-        
+            
+       
+       }
+       
+       return redirect()->route('post.all')->with('status','Post create Successful !');
    }
 
    public function show($postId){
@@ -33,7 +45,7 @@ class PostController extends Controller
    public function update($postId,Request $request){
         Post::findOrFail($postId)->update($request->all());
 
-        return redirect()->route('post.all');
+        return redirect()->route('post.all')->with('status','Post Updated !');
    }
 
    public function delete($postId){

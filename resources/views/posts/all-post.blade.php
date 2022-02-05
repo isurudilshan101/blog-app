@@ -5,6 +5,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
+                @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
                 <table class="table">
                     <thead>
                         <tr>
@@ -21,8 +26,9 @@
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->description }}</td>
                                 <td>
-                                    <a href="{{ route('post.edit',$post->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="{{ route('post.delete',$post->id) }}" class="btn bbtn-sm btn-danger">Delete</a>
+                                    <a href="{{ route('post.edit', $post->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                    <a href="{{ route('post.delete', $post->id) }}"
+                                        class="btn bbtn-sm btn-danger">Delete</a>
                                 </td>
                             </tr>
                         @endforeach
