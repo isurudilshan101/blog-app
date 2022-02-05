@@ -32,7 +32,7 @@ class PostController extends Controller
 
    public function update($postId,Request $request){
         Post::findOrFail($postId)->update($request->all());
-        
-        return back();
+
+        return redirect()->route('post.all');
    }
 }
